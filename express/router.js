@@ -1,9 +1,10 @@
 const express = require("express");
-const router = express.Router()
+const router = express.Router();
+const middleware = require("./middleware");
 
 
 
-router.get("/", (req,res)=>{
+router.get("/",middleware, (req,res)=>{
     // res.send("this is express server");
     res.render("ind",{
         title:"index"
